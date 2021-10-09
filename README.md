@@ -5,6 +5,8 @@ pair images of same scene which are taken from a different angle or perspective
 ##  Algorithm explanation:
 ### disparity and disparity maps:
 disparity is defined as the difference of position of a sepcific point or object in right image to left image.
+
+
 ![image](https://user-images.githubusercontent.com/92177410/136625358-0ada55c3-a154-4976-a690-924cdf94f61d.png)
 
 Z=B*f/D
