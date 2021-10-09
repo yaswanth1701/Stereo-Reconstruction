@@ -64,7 +64,8 @@ epipolar geomerty basically converts 2D search into 1D search for stereo corresp
 *  colormap(for current project we use **jet** colormap)
 
 for more info about colormaps [click here.](https://matplotlib.org/stable/tutorials/colors/colormaps.html)
-* then we pass _plt.show_ to display output.
+
+8) then we pass _plt.show_ to display output.
 ### reprojection of image points(u,v) to 3D coordinates:
 #### principle:
 
@@ -80,22 +81,27 @@ X0 and Y0 are camera offsets
 we  use calibartion matrix to obtain 3D coordinates using disparity.
 #### code :
 
-8) after visualization we use _cv.reprojectImageTo3D_ to obtain 3D coordinates of points.
+9) after visualization we use _cv.reprojectImageTo3D_ to obtain 3D coordinates of points.
 ##### parameters of _cv.reprojectImageTo3D_ :
 * diparity map
 * calibration matrix (numpy array containing camera parameters)
-9) obtain points colour using _cv.cvtColor_
+10) obtain points colour using _cv.cvtColor_
 ##### parameters of _cv.cvtColor_ :
 * image
 * color space
-10) thresholding 3D points to remove points having no diparity or very large depth.
+11) thresholding 3D points to remove points having no diparity or very large depth.
 ### creating point cloud:
 #### code:
-11 creating point cloud using ply file 
-12 defining elements and property of elemenst using ply header 
-13save all the points and their respective in color in _.ply_ file
-14 finally open _.ply_ file in meshlab to visualize the point cloud 
+12) creating point cloud using ply file 
+
+13) defining elements and property of elemenst using ply header 
+
+14) save all the points and their respective in color in _.ply_ file
+
+15) finally open _.ply_ file in meshlab to visualize the point cloud 
+
 ## samples images:
+
 ![im0](https://user-images.githubusercontent.com/92177410/136657519-c2395431-d5b7-43fc-a766-90c4100e3322.png)
 
 
