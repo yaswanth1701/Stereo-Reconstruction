@@ -69,7 +69,7 @@ epipolar geomerty basically converts 2D search into 1D search for stereo corresp
     *  disparity or any other image we want to show.
     *  colormap(for current project we use **jet** colormap)
 
-for more info about colormaps [click here.](https://matplotlib.org/stable/tutorials/colors/colormaps.html)
+      for more info about colormaps [click here.](https://matplotlib.org/stable/tutorials/colors/colormaps.html)
 
 8) then  pass _plt.show_ to display output.
 ### reprojection of image points(u,v) to 3D coordinates:
