@@ -67,8 +67,8 @@ epipolar geomerty basically converts 2D search into 1D search for stereo corresp
     * right image 
     * left image
 
-5) we obtained disparity map. 
-6) apply gaussian blur on diaprity map for better results
+5) obtained disparity . 
+6) apply gaussian blur on disparity for better results
 7) for visualization of disparity map we use matplotlib function _plt.imshow_
  *  #####  parameters of _plt.imshow_
     *  disparity or any other image we want to show.
@@ -92,11 +92,11 @@ X0 and Y0 are camera offsets
 we  use calibartion matrix to obtain 3D coordinates using disparity.
 #### code :
 
-9) after visualization we use _cv.reprojectImageTo3D_ to obtain 3D coordinates of points.
+9) after visualization , use _cv.reprojectImageTo3D_ to obtain 3D coordinates of points.
 * ##### parameters of _cv.reprojectImageTo3D_ :
   * diparity map
   * calibration matrix (numpy array containing camera parameters)
-10) obtain points colour using _cv.cvtColor_
+10) obtain point's colour using _cv.cvtColor_
 * ##### parameters of _cv.cvtColor_ :
    * image
    * color space
@@ -105,9 +105,9 @@ we  use calibartion matrix to obtain 3D coordinates using disparity.
 #### code:
 12) create point cloud using ply file 
 
-13) defining elements and property of elemenst using ply header 
+13) define elements and property of elemenst using ply header 
 
-14) save all the points and their respective in color in _.ply_ file
+14) save all the points and their respective in colours in _.ply_ file
 
 15) finally open _.ply_ file in meshlab to visualize the point cloud 
 
