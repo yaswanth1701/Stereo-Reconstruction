@@ -39,10 +39,12 @@ epipolar geomerty basically converts 2D search into 1D search for stereo corresp
 #### code:
 1) first we install opencv and matplotlib library
 
-> pip install matplotlib
+<code>  pip install matplotlib </code>
 
-> pip install opencv-python
+<code> pip install opencv-python </code>
+
 2)  load  images in grayscale using _cv.imread_ which takes two arguments first is image location and second is image colour
+
 3) after loading  images , use _cv.StereoSGBM_create_ or _cv.StereoSGBM_create_ .
 * #####  paramters of _cv.StereoSGBM_create_:
   * mindisparity
@@ -119,7 +121,8 @@ we  use calibartion matrix to obtain 3D coordinates using disparity.
 
 ![bike](https://user-images.githubusercontent.com/92177410/136672921-beadf057-b987-4d60-87c7-605cc4282f47.gif)
 ## To run code :
-<code> git clone </code>
+<code> git clone https://github.com/yaswanth1701/STEREO-RECONSTRUCTION.git </code>
+* edit image path and run.
 
  
 
