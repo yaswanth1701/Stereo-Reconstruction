@@ -101,8 +101,11 @@ we  use calibartion matrix to obtain 3D coordinates using disparity.
 15) finally open _.ply_ file in meshlab to visualize the point cloud 
 
 ## samples images:
+right image:
 
 ![im0](https://user-images.githubusercontent.com/92177410/136657519-c2395431-d5b7-43fc-a766-90c4100e3322.png)
+
+left image:
 
 
 
