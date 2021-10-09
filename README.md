@@ -40,6 +40,7 @@ first of all we need to convert our points from world coordinate system to camer
 ![image](https://user-images.githubusercontent.com/92177410/136623326-5e20a029-3cc2-42ae-8748-c9d4e04480a7.png)
 
 in general we need to know atleast 6 points real world coordinates and their corresponding image coordinate to calculate externsic parameters.
+
 Internsic camera matrix :
 after getting our camera coordinates of a point we need convert 3D points(X,Y,Z) into 2D image coordinates(U,V) for this we use internsic camera matrix.
 
@@ -69,12 +70,16 @@ for obataining the position or coordinate of points we use calibration matrix in
 ## Algorithm:
 1) first we install opencv and matplotlib library
 2) then we load our images in grayscale using _cv.imread_ which takes two arguments first image location and second is image colour
-3) after loading our images we use cv.StereoSGBM_create or cv.StereoBM_create
-- argumets of _cv.StereoSGBM_create_
-- 
-
-
-
+3) after loading our images we use cv.StereoSGBM_create or cv.StereoBM_create for disparity map.
+#### argumets of _cv.StereoSGBM_create_
+* mindisparity
+* numDisparities = (maxdisparity - mindisparity):this parameter much divisble by 16
+* blockSize(should be a odd number)
+* P1 & P2(controls smoothness of disparity map)
+* uniqueness Ratio
+* speckleWindowSize
+* speckleRange
+refer to https://docs.opencv.org/4.5.3/d2/d85/classcv_1_1StereoSGBM.html
 
 
 
