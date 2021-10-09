@@ -118,8 +118,10 @@ we  use calibartion matrix to obtain 3D coordinates using disparity.
 ### result :
 
 ![bike](https://user-images.githubusercontent.com/92177410/136672921-beadf057-b987-4d60-87c7-605cc4282f47.gif)
+## To run code :
+<code> git clone </code>
 
-
+ 
 
 
 
