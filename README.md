@@ -108,7 +108,8 @@ for more info about colormaps visit [here](https://matplotlib.org/stable/tutoria
 12) defining elements and property of elemenst using ply header 
 13) save all the points and their respective in color in _.ply_ file
 14) finally open _.ply_ file in meshlab to visualize the point cloud 
-
+## samples images:
+![im0](https://user-images.githubusercontent.com/92177410/136657519-c2395431-d5b7-43fc-a766-90c4100e3322.png)
 
 
 
