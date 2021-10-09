@@ -69,8 +69,8 @@ now after obtaining the depth we need to calculate points position in real world
 for obataining the position or coordinate of points we use calibration matrix in reverse sense this known as stereo reprojection.
 ## Algorithm:
 1) first we install opencv and matplotlib library
-2) then we load our images in grayscale using _cv.imread_ which takes two arguments first image location and second is image colour
-3) after loading our images we use cv.StereoSGBM_create or cv.StereoBM_create for disparity map.
+2) we load our images in grayscale using _cv.imread_ which takes two arguments first is image location and second is image colour
+3) after loading our images we use _cv.StereoSGBM_create_ or _cv.StereoSGBM_create_ .
 #### argumets of _cv.StereoSGBM_create_
 * mindisparity
 * numDisparities = (maxdisparity - mindisparity):this parameter much divisble by 16
@@ -79,7 +79,35 @@ for obataining the position or coordinate of points we use calibration matrix in
 * uniqueness Ratio
 * speckleWindowSize
 * speckleRange
-refer to https://docs.opencv.org/4.5.3/d2/d85/classcv_1_1StereoSGBM.html
+
+refer to opencv documentation for more parameters [here,](https://docs.opencv.org/4.5.3/d2/d85/classcv_1_1StereoSGBM.html)
+
+4) now compute disparity using _stereo.compute_
+#### arguments of _stereo.compute_
+* right image 
+* left image
+5) we obtained disparity map. 
+6) apply gaussian blur on diaprity map for better results
+7) for visualization of disparity map we use matplotlib function _plt.imshow_
+#### arguments of _plt.imshow_
+*  disparity or any other image we want to show.
+*  colormap(for current project we use **jet** colormap)
+
+for more info about colormaps visit [here](https://matplotlib.org/stable/tutorials/colors/colormaps.html)
+* then we pass _plt.show_ to display output.
+8) after visualization we use _cv.reprojectImageTo3D_ to obtain 3D coordinates of points.
+#### arguments of _cv.reprojectImageTo3D_
+* diparity map
+* calibration matrix (numpy array containing camera parameters)
+9) obtain points colour using _cv.cvtColor_
+#### arguments of _cv.cvtColor_
+* image
+* color space
+10) thresholding 3D points to remove points having no diparity or very large depth.
+11) creating point cloud using ply file 
+12) defining elements and property of elemenst using ply header 
+13) save all the points and their respective in color in _.ply_ file
+14) finally open _.ply_ file in meshlab to visualize the point cloud 
 
 
 
