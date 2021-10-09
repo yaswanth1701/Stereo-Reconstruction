@@ -46,7 +46,7 @@ epipolar geomerty basically converts 2D search into 1D search for stereo corresp
 <code> pip install opencv-python </code>
 
 2)  load  images in grayscale using _cv.imread_ 
-* ##### parameters of _cv.imread_
+* ##### parameters of _cv.imread_:
   * image path 
   * image colour 
 
