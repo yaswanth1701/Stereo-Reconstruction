@@ -13,6 +13,8 @@ A stereo-pair image contains two views of a scene side by side. One of the views
 
 <img src="imp/b.png" width="500" height="200" />
 
+
+
 <!--## Types of Projections:-
 
 ### 1) Eucledian or Isometric transformation:-<br/>
@@ -78,7 +80,34 @@ Disparity map refers to the apparent pixel difference or motion between pair of 
 <img src="imp/disparity.png" width="300" height="300" /> 
 <img src="Disparity Maps/Bike.png" width="300" height="300" />
 
-Depth is inversely proportional to disparity, i.e., from the depth estimation equation, we have Z∝1/(xl−xr). As disparity (xl−xr) increases, Z decreases and for lower disparity (xl−xr) <br/>-->
+depth of particular poit in image is distance b/w camera centre and its corresponding real world point.
+
+Depth is inversely proportional to disparity, i.e., from the depth estimation equation, we have
+
+**Z∝1/(xl−xr)**
+
+As disparity (xl−xr) increases, Z decreases and for lower disparity (xl−xr) <br/>-->
+## 3D reprojection 
+to  convert 3D points(X,Y,Z) into 2D image coordinates(U,V) for this we use internsic camera matrix.
+
+
+![image](https://user-images.githubusercontent.com/92177410/136624644-75b0dbe7-7f8d-494d-bd6e-46dc7200520d.png)
+
+
+here Fx and Fy are focal length 
+
+
+S skew of camera 
+
+
+X0 and Y0 are camera offsets
+
+
+we pass image point and disparity(from which depth(z) of points can be calculated) into the calibration matrix to obtain 3D real world coordinates this process is known as 3D reprojection.
+
+
+
+
 
 
 
@@ -107,28 +136,35 @@ Depth is inversely proportional to disparity, i.e., from the depth estimation eq
 
 ## Algorithm of Main Program :- 
 
-1)Import essential libraries such as opencv and pyplot from matplotlib.<br/>
+1)install essential libraries.<br/>
 <br/>
+
+<code>  pip install matplotlib </code>
+
+
+<code> pip install opencv-python </code>
+
+
 2) Take 2 images (left and Right view) as input in Gray format<br/>
 <br/>
-3) Find disparity map using StereoSGBM_create which takes many parameters as mentioned in calibration.txt and tune the map according to the requirements.<br/>
+3) Find disparity map using <code>StereoSGBM_create</code> which takes many parameters as mentioned in calibration.txt and tune the map according to the requirements.<br/>
 <br/>
 4) Change the type of the map because it return 16bit signed single channel image,CV_16s containing a disparity map scaled by 16.Hence it is essential to convert it to CV_32F and scale it down 16 times. <br/>
 <br/>
 5) Normalize the disparity map by Number of disparity <br/>
 <br/>
-6) Now find the Q  4*4 perspective transformation matrix using calibration.txt<br/>
+6) Now find the **Q** (4 X 4 perspective transformation matrix using calibration.txt)<br/>
 <!--&emsp;&emsp; &emsp;&emsp; &emsp;&emsp; a) f=focal length <br/>
 &emsp;&emsp; &emsp;&emsp; &emsp;&emsp; b) b=baseline <br/>-->
 <br/>
-7) use reprojectimageto3d by passing the parameters such as disparity map and Q matrix.<br/>
+7) use <code>reprojectimageto3d</code> by passing the parameters such as disparity map and Q matrix.<br/>
 <br/>
-8) Now convert the file into PLY format<br/>
+8) Now convert the file into <code>PLY</code> format<br/>
 <br/>
-9) Visualize the same file in Meshlab software after conversion.<br/>
+9) Visualize the same file in **Meshlab** software after conversion.<br/>
 <br/>
 
-10)We can also plot it using matplotlib.<br/>
+10)We can also plot it using **matplotlib**.<br/>
 <br/>
 
 <!--<br/> &emsp;&emsp; a) Number of disparities (numDisparities):-<br/>
@@ -194,6 +230,18 @@ pip install opencv-python
 ```bash
 pip install matplotlib
 ```-->
+## links:
+### opencv functions:
+for stereosbgm,[click here](https://docs.opencv.org/4.5.3/d2/d85/classcv_1_1StereoSGBM.html).
+
+
+for all other functions,[click here](https://docs.opencv.org/4.5.2/d6/d00/tutorial_py_root.html)
+### matplotlib functions:
+for colormap,[click here.](https://matplotlib.org/stable/tutorials/colors/colormaps.html)
+
+
+for 3D plots,[click here](https://matplotlib.org/2.0.2/mpl_toolkits/mplot3d/tutorial.html)
+
 ## How to run the code :- 
 ~~~ bash
 git clone https://github.com/Pranav2442/Stereo_Reconstruction.git
