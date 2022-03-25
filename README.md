@@ -114,10 +114,11 @@ we  use calibartion matrix to obtain 3D coordinates using disparity.
 ## output :
 ### image 1:
 
-![im0](https://user-images.githubusercontent.com/92177410/136657519-c2395431-d5b7-43fc-a766-90c4100e3322.png)
+
+<img src="https://user-images.githubusercontent.com/92177410/136657519-c2395431-d5b7-43fc-a766-90c4100e3322.png" width="300" height="200">
 
 ### image 2:
-![im1](https://user-images.githubusercontent.com/92177410/136672788-222a72bb-4c28-4a8c-a0b2-0cc12e4ce558.png)
+<img src="https://user-images.githubusercontent.com/92177410/136672788-222a72bb-4c28-4a8c-a0b2-0cc12e4ce558.png" width="300" height="200">
 
 ### disparity map:
 <img width="287" alt="bike" src="https://user-images.githubusercontent.com/92177410/136672832-91e53378-8655-43e3-b125-5a6fb6f27dad.png">
